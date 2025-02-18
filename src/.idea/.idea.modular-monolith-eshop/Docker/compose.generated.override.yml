@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  api:
+    build:
+      context: "/media/moonlight/Data/Projects/.net8/modular-monolith-eshop/src/Bootstrapper/Api"
+      dockerfile: "Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Api.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "api:dev"
+    ports: []
+    volumes:
+    - "/media/moonlight/Data/Projects/.net8/modular-monolith-eshop/src/Bootstrapper/Api:/app:rw"
+    - "/media/moonlight/Data/Projects/.net8/modular-monolith-eshop/src:/src:rw"
+    - "/home/moonlight/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"

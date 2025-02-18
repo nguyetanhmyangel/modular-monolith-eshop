@@ -1,0 +1,20 @@
+﻿services:
+  api:
+    container_name: api
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=eshopdb;Port=5432;Database=EShopDb;Username=postgres;Password=postgres
+    depends_on:
+      - eshopdb
+    restart: always
+
+  eshopdb:
+    container_name: eshopdb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=EShopDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_eshopdb:/var/lib/postgresql/data
