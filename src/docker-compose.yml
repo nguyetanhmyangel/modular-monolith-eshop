@@ -14,5 +14,6 @@
     restart: always
   eshopdb:
     image: postgres
+    platform: linux
 volumes:
   postgres_eshopdb:
